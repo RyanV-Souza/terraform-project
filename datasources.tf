@@ -1,3 +1,3 @@
 data  "aws_s3_bucket" "s3-bucket" {
-  bucket = "rhyzzor-bucket-${terraform.workspace}"
+  bucket = "${var.org_name}-bucket-${terraform.workspace}"
 }
