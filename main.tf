@@ -1,9 +1,4 @@
-resource "aws_s3_bucket" "s3-bucket" {
-  bucket = "${var.org_name}-bucket-${terraform.workspace}"
-
-  tags = {
-    name    = "RhyzzorBucket"
-    Iac     = true
-    context = "${terraform.workspace}"
-  }
+module "s3" {
+  source         = "./modules/s3"
+  s3_bucket_name = "rhyzzor"
 }
